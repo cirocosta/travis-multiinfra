@@ -1,0 +1,23 @@
+language: 'go'
+
+go:
+  - '1.9.1'
+
+matrix:
+  include:
+    - env: 'TEST_SUITE=unit'
+      sudo: false
+
+    - env: 'TEST_SUITE=integration'
+      sudo: true
+      services:
+        - 'docker'
+
+install:
+  - 'true'
+
+script:
+  - 'true'
+
+notifications:
+  email: false
